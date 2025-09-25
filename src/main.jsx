@@ -9,10 +9,12 @@ import Layout from './Layout'
 import Home from './components/Home/Home'
 import About from './components/About/About'
 import Contact from './components/Contact/Contact'
+import Github from './components/Github/Github'
 import { createBrowserRouter} from 'react-router-dom'
 import { createRoutesFromElements } from 'react-router-dom'
 import { Route } from 'react-router-dom'
 import User from './components/User/User'
+import {githubInfoLoader} from './components/Github/Github'
 
 // const router =createBrowserRouter([
 //   {
@@ -45,6 +47,10 @@ const router =createBrowserRouter(
       <Route path ='about' element={<About/>}/>
       <Route path='contact' element={<Contact />} />
       <Route path='user/:userid' element={<User />} />
+      <Route 
+      loader={githubInfoLoader}
+      path= 'github' 
+      element ={<Github/>}></Route>
       </Route>
   )
 ) 
